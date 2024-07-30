@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import axios from 'axios';
 import { withLayout } from '../../layout/Layout';
 import { MenuItem } from '../../interfaces/menu.interface';
@@ -18,7 +18,7 @@ function Course({ menu, page, products }: CourseProps): JSX.Element {
 
 export default withLayout(Course);
 
-export const getStaticPaths: getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     let paths: string[] = [];
     for (const m of firstLevelMenu) {
         const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
