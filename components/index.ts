@@ -5,3 +5,5 @@ export * from './Tag/Tag';
 export * from './Rating/Rating';
 export * from '../layout/Layout';
 export * from '../layout/Sidebar/Sidebar';
+export * from './Card/Card';
+export * from './HhData/HhData';
