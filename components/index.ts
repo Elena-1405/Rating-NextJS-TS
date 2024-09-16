@@ -7,3 +7,4 @@ export * from '../layout/Layout';
 export * from '../layout/Sidebar/Sidebar';
 export * from './Card/Card';
 export * from './HhData/HhData';
+export * from './Advantages/Advantages';
