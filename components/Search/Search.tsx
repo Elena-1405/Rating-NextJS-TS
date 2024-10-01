@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, KeyboardEvent } from 'react';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import { SearchProps } from './Search.props';
 import GlassIcon from './glass.svg';
 import styles from './Search.module.css';
 import cn from 'classnames';
-import router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
     const [search, setSearch] = useState<string>('');
@@ -18,14 +18,22 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
                 q: search
             }
         });
-    }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+		if (e.key == 'Enter') {
+			goToSearch();
+		}
+	};
+
     return (
-        <form className={cn(className, styles.search)} {...props} role='search'>
+        <div className={cn(className, styles.search)} {...props}>
             <Input 
                 className={styles.input}
                 placeholder='Поиск'
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={handleKeyDown}
             />
             <Button 
                 appearance='primary'
@@ -40,6 +48,6 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
             >
                 <GlassIcon />
             </Button>
-        </form>
+        </div>
     );      
 };
