@@ -37,14 +37,8 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
             />
             <Button 
                 appearance='primary'
-                className={styles.button}//не видит стили в css. To solve
+                className={styles.button}
                 onClick={goToSearch}
-                style={{position: 'absolute', //temporary
-                    top: '3px',
-                    right: '3px',
-                    width: '30px',
-                    height: '30px',
-                    padding: '7px'}}
             >
                 <GlassIcon />
             </Button>
