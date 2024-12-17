@@ -4,6 +4,7 @@ import { useScrollY } from '../../hooks/useScrollY';
 //import { ButtonIcon } from '../ButtonIcon/ButtonIcon';
 import styles from './Up.module.css';
 import UpIcon from './up.svg'
+import { ButtonIcon } from '../ButtonIcon/ButtonIcon';
 
 export const Up = (): JSX.Element => {
     const controls = useAnimation();
@@ -20,13 +21,12 @@ export const Up = (): JSX.Element => {
         });
     };
 	return (
-        <motion.button 
-            className={styles.up} 
-            onClick={scrollToTop}
+        <motion.div
+            className={styles.up}  
             animate={controls}
             initial={{ opacity: 0}}
         >
-            <UpIcon />
-        </motion.button>
+            <ButtonIcon appearance='primary' icon='up' onClick={scrollToTop} />
+        </motion.div>
     );
 };
