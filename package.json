@@ -13,7 +13,10 @@
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next dev",
     },
     "lint-staged": {
-      "*.js": ["prettier --write"]
+      "*.ts": ["eslint --fix", "prettier --write"],
+      "*.tsx": ["eslint --fix", "prettier --write"],
+      "*.js": ["eslint --fix", "prettier --write"],
+      "*.{css,scss}": ["stylelint --fix"]
     },
   "keywords": [],
   "author": "",
