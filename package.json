@@ -1,21 +1,22 @@
 {
-  "name": "nextjs-app",
+  "name": "top-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
     "debug": "NODE_OPTIONS='--inspect' next dev",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && next start",
     "lint": "next lint",
     "stylelint": "stylelint \"**/*.css\" --fix",
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next dev",
+    "export": "next export"
     },
     "lint-staged": {
-      "*.ts": ["eslint --fix", "prettier --write"],
-      "*.tsx": ["eslint --fix", "prettier --write"],
-      "*.js": ["eslint --fix", "prettier --write"],
+      "*.ts": ["eslint --fix"],
+      "*.tsx": ["eslint --fix"],
+      "*.js": ["eslint --fix"],
       "*.{css,scss}": ["stylelint --fix"]
     },
   "keywords": [],

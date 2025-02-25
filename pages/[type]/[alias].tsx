@@ -12,18 +12,21 @@ import Head from 'next/head';
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
   return <>
-    <Head>
-        <title>{page.metaTitle}</title>
-        <meta name='description' content={page.metaDescription} />
-        <meta name='og:title' content={page.metaTitle} />
-        <meta name='og:description' content={page.metaDescription} /> 
-        <meta name='og:type' content='article' />
-    </Head>
-    <TopPageComponent 
-        firstCategory={firstCategory}
-        page={page} 
-        products={products}
-    /></>;
+        {page && products && <> 
+            <Head>
+                <title>{page.metaTitle}</title>
+                <meta name='description' content={page.metaDescription} />
+                <meta name='og:title' content={page.metaTitle} />
+                <meta name='og:description' content={page.metaDescription} /> 
+                <meta name='og:type' content='article' />
+            </Head>
+            <TopPageComponent 
+                firstCategory={firstCategory}
+                page={page} 
+                products={products}
+            /></>
+        }
+    </>;    
 }
 
 export default withLayout(TopPage);
@@ -39,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     
     return {
         paths,
-        fallback: true
+        fallback: false
     };
 };
 
