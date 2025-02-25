@@ -12,13 +12,21 @@
     "stylelint": "stylelint \"**/*.css\" --fix",
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider next dev",
     "export": "next export"
-    },
-    "lint-staged": {
-      "*.ts": ["eslint --fix"],
-      "*.tsx": ["eslint --fix"],
-      "*.js": ["eslint --fix"],
-      "*.{css,scss}": ["stylelint --fix"]
-    },
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.tsx": [
+      "eslint --fix"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -41,7 +49,7 @@
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.9.0",
     "@typescript-eslint/parser": "^7.9.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
