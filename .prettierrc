@@ -1,0 +1,10 @@
+{
+  "singleQuote": true,
+  "configPath": "/.prettierrc.json",
+  "jsxSingleQuote": true,
+  "prettier.printWidth": 100,
+  "useTabs": true,
+  "formatOnSave": true,
+  "formatOnPaste": true,
+  "prettierPath": ".prettierrc.json"
+}
